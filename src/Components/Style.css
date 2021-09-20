@@ -1,0 +1,50 @@
+.movie-box{
+    height: auto;
+    width: auto;
+    background-color: antiquewhite;
+    border:solid 1px black;
+    margin: 10px;
+}
+.p-box{
+    margin-top: 10px;
+    height: auto;
+    width: auto;
+    background-color:burlywood;
+    border:solid 1px black;
+    margin: 5px;
+}
+.form-{
+    height:auto;
+    width: auto;
+    background-color: cyan;
+    margin-top: 5px;
+}
+
+.paginationBttns{
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.paginationBttns a{
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #2b2eff;
+    color: #2b2eff;
+    cursor: pointer;
+}
+.paginationBttns a:hover{
+    color: white;
+    background-color: #2b2eff;
+}
+.paginationActive a{
+    color: white;
+    background-color: #2b2eff;
+}
+
+
+
+
+      
