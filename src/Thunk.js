@@ -46,7 +46,7 @@ export const requestMovieQuotes=(id)=>{
             const quoteData=await request.get(`/movie/${id}/quote`)
             dispatch(fetchMovieQuote(quoteData.data))
         } catch (error) {
-            
+            console.log(error)
         }
     }
 }
@@ -89,7 +89,7 @@ export const requestFetchCharacterBySort=(sort)=>{
             const sortData=await request.get(`/character/?sort=name:${sort}`)
             dispatch(characterDataSort(sortData.data))
         } catch (error) {
-            
+            console.log(error)
         }
     }
 }

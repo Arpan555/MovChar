@@ -8,7 +8,6 @@ import MovieQuote from "./Components/MovieQuote"
 import CharactersQuote from "./Components/CharactersQuote"
 import CharactersDetails from "./Components/CharacterDetails"
 import MovieFilter from "./Components/MovieFilter"
-import MovieFilterEx from './Components/MovieFilterEx';
 function App() {
   return (
     <div >
@@ -22,7 +21,6 @@ function App() {
             <Route exact path="/characters/:id" component={CharactersDetails}/>
             <Route exact path="/characters/:id/quotes" component={CharactersQuote}/>
             <Route exact path="/moviefilter" component={MovieFilter}/>
-            <Route exact path="/moviefilterex" component={MovieFilterEx}/>
         </Switch>
      </BrowserRouter>
     </div>

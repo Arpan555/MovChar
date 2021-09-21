@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { requestFetchFilterMovie } from '../Thunk'
+import { requestFetchFilterMovie, requestFetchFilterMovieEx } from '../Thunk'
 import { useHistory,Link } from 'react-router-dom'
 const MovieFilter = () => {
     const [form,setForm]=useState({
         budgetSearch:"",
         awardSearch:"",
-        runtimeSearch:""
+        runtimeSearch:"",
+        includeSearch:""
     })
     const history=useHistory()
     const dispatch = useDispatch()
@@ -16,12 +17,16 @@ const MovieFilter = () => {
     }
     const handleSubmit=(e)=>{
         e.preventDefault()
-        console.log(form)
+        if(form.includeSearch==="true")
+        {
         dispatch(requestFetchFilterMovie(form))
-        setForm({budgetSearch:"",awardSearch:"",runtimeSearch:""})
+        }
+        else{
+            dispatch(requestFetchFilterMovieEx(form))
+        }
+        setForm({budgetSearch:"",awardSearch:"",runtimeSearch:"",includeSearch:""})
     }
     const filterData= useSelector(state => state.reducer.filterMovie)
-    console.log(filterData)
     return (
         <div>
             <center>
@@ -34,6 +39,9 @@ const MovieFilter = () => {
                     <input type="number" name="awardSearch" value={form.awardSearch} onChange={handleChange}/><br/><br/>
                     <label>Search By Run Time(in Minutes)</label>
                     <input type="number" name="runtimeSearch" value={form.runtimeSearch} onChange={handleChange}/><br/><br/>
+                    <label>Include</label>
+                    <input type="text" name="includeSearch" value={form.includeSearch} onChange={handleChange}/><br/><br/>
+                    
                     <input type="submit" className="btn btn-primary" value ="Filter" />
                 </form><br/><br/>
                 {filterData.length>0 ?  filterData.map(data=>

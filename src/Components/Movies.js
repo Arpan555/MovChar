@@ -45,8 +45,7 @@ const Movies = () => {
             <center>
                 <input type="button" className="btn btn-primary" value="Back To Home" onClick={()=>history.push("/")}/>&nbsp;&nbsp;&nbsp;
                 <input type="button" className="btn btn-secondary" value="Sort" onClick={handleSort}/>&nbsp;&nbsp;&nbsp;
-                <input type="button" className="btn btn-success" value="Filter +" onClick={()=>history.push("/moviefilter")}/>&nbsp;&nbsp;&nbsp;
-                <input type="button" className="btn btn-success" value="Filter -" onClick={()=>history.push("/moviefilterex")}/>
+                <input type="button" className="btn btn-success" value="Filter" onClick={()=>history.push("/moviefilter")}/>&nbsp;&nbsp;&nbsp;
                 <h1>Movie</h1><br/>
                 {displayMov}<br/><br/>
                 <ReactPaginate
